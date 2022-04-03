@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>계정 만들기</title>
+        <link rel = "stylesheet" type = "text/css" href = "main.css">
+    </head>
+    <body>
+        <h2>회원가입</h2>
+        <form>
+            <p>
+                <a href="login.html"><input type = "button" value = "로그인하러 가기" /></a>
+            </p>
+            <h4>필수 입력 사항</h4>
+            <p>
+                <label>이름 : <input type = "text" name = "name" placeholder = "이름" autofocus required /></label>
+            </p>
+            <p>
+                <label>생년월일 : <input type = "date" name = "date" required /></label>
+            </p>
+            <p>
+                <label>전화번호 : <input type = "tel" name = "tel" placeholder = "###-####-####" pattern = "\d{3}-\d{4}-\d{4}" required /> </label>
+            </p>
+            <p>
+                <label>아이디 : <input type = "email" name = "id" placeholder = "name@domain.com" required /></label>
+            </p>
+            <p>
+                <label>비밀번호 : <input type = "password" name = "password" placeholder = "비밀번호" required /></label>
+            </p>
+            <p>
+                <label>비밀번호 재입력 : <input type = "password" name = "password" placeholder = "비밀번호 재입력" required /></label>
+            </p>
+            <h4>선택 입력 사항</h4>
+            <p>
+                <label>일주일에 장을 보는 횟수 : <input type = "number"  name = "shopping-frequency" min = "0" max = "7" step = "1"/></label>
+            </p>
+            <p>
+                <input type = "submit" value = "Submit" />
+                <input type = "reset" value = "Clear" />
+            </p>
+        </form>
+    </body>
+</html>
