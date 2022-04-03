@@ -17,22 +17,22 @@
             
             <p>
                 <label>이름 : 
-                    <input type = "text" name = "name" placeholder = "이름" autofocus required />
+                    <input type = "text" name = "name" placeholder = "이름" autofocus required /><!--using autofocus attribute-->
                 </label>
             </p>
             <p>
                 <label>생년월일 : 
-                    <input type = "date" name = "date" required />
+                    <input type = "date" name = "date" required /><!--using required attribute-->
                 </label>
             </p>
             <p>
                 <label>전화번호 : 
-                    <input type = "tel" name = "tel" placeholder = "###-####-####" pattern = "\d{3}-\d{4}-\d{4}" required />
+                    <input type = "tel" name = "tel" placeholder = "###-####-####" pattern = "\d{3}-\d{4}-\d{4}" required /><!--using pattern attribute-->
                 </label>
             </p>
             <p>
                 <label>아이디 : 
-                    <input type = "email" name = "id" placeholder = "name@domain.com" required />
+                    <input type = "email" name = "id" placeholder = "name@domain.com" required /><!--using placeholder attribute-->
                 </label>
             </p>
             <p>
@@ -48,11 +48,7 @@
             <h4>선택 입력 사항</h4>
             <p>
                 <label>일주일에 장을 보는 횟수 : 
-                    <input type = "number"  name = "shopping-frequency" min = "0" max = "7" step = "1"/>
-                </label>
-                <label>일주일에 장보기에 쓰는 금액(원) :
-                    <input type = "number" name = "shopping-costperweek" min = "0" max = "1,000,000" step = "100,000" />
-
+                    <input type = "number"  name = "shopping-frequency" min = "0" max = "7" step = "1"/><!--using step attribute-->
                 </label>
             </p>
             <p>
