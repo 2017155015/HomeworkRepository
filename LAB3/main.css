@@ -11,13 +11,14 @@ body {
 nav {
   padding : 10px 20px;
   text-align: right;
-  background-color: white;
-  border: 3px solid goldenrod;
+  background-color: goldenrod;
+  border: 3px solid #FFEDBC;
   border-radius: 15px;
 }
 
 nav a {
-  color : #501B6B;
+  font-weight : bold;
+  color : #0A1F3F;
 }
 
 #headsliding {
