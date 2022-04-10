@@ -1,68 +1,146 @@
 html {
-  background-color: cadetblue; /*background-color*/
+  background-color: #0A1F3F;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  text-align: center; /*text-align*/
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /*font-family*/
-  margin-top: 100px; /*margin*/
-  margin-left: 40px; /*margin*/
-  margin-right: 40px; /*margin*/
-  margin-bottom: 100px; /*margin*/
+  width: 1020px;
+  margin: 20px auto;
 }
 
-div {
+nav {
+  padding : 10px 20px;
+  text-align: right;
+  background-color: #501B6B;
+  border: 3px solid white;
+  border-radius: 15px;
+}
+
+nav a {
+  color : gold;
+}
+
+#headsliding {
+  color: #FFEDBC;
+  animation-name: headsliding;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-direction: alternate;
+}
+
+@keyframes headsliding {
+  0% {margin-left: 67%;}
+  100% {margin-left: 0%;}
+}
+
+.item {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.item h2, h3 {
+  color : white;
+}
+
+.item h4 {
+  color: gainsboro
+}
+
+#rotating-image {
+  border : 1px solid goldenrod;
+  background : white;
+  margin : 30px; 
+  padding : 15px;
+  border-radius : 50px;
+  transition : transform 2s;
+}
+
+#rotating-image:hover {
+  transform : rotate(360deg);
+}
+
+.image-border {
+  display: inline-block;
+  border: 3px solid gray; /*border*/
+  background: #871D60;
+  text-align: justify;
+  border-radius: 15px;
+  width: 240px; /*width*/
+  height: 240px; /*height*/
+}
+
+.scaleup-image {
+  display : block;
+  margin : 20px auto;
+  border-radius : 10px;
+  transition : transform 2s;
+}
+
+.scaleup-image:hover {
+  transform: scale(1.2,1.2);
+}
+
+.signup-page,
+.login-page {
+  text-align: center;
+}
+
+.signup-page h1 {
+  color: #FFEDBC;
+}
+
+.signup-page h3 {
+  color : white;
+}
+
+.required {
+  display: inline-block;
   border: 3px solid gray; /*border*/
   padding: 5px 20px; /*padding*/
   background: white;
   text-align: justify;
   border-radius: 15px;
-}
-
-.required {
   width: 400px; /*width*/
   height: 300px; /*height*/
 }
 
 .option {
+  display: inline-block;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  background: white;
+  text-align: justify;
+  border-radius: 15px;
   width: 400px; /*width*/
   height: 100px; /*height*/
 }
 
 .login {
+  display: inline-block;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  background: white;
+  text-align: justify;
+  border-radius: 15px;
   width: 400px; /*width*/
   height: 180px; /*height*/
 }
 
 .gray-button {
-  border: 1pt solid; /*border*/
+  display: inline-block;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  text-align: justify;
   border-radius: 6px;
   background-color: lightgray;
-  padding: 6px;
 }
 
 .gray-button:hover {
+  display: inline-block;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  background: white;
+  text-align: justify;
+  border-radius: 6px;
   background-color: white;
-  border: 2pt solid;
-}
-
-h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif; /*font-family*/
-  font-size: 24pt; /*font-size*/
-  color: antiquewhite; /*color*/
-}
-
-h4 {
-  color: black;
-}
-
-h3 {
-  color: white;
-}
-
-p {
-  font-size: 0.8em; /*font-size*/
-  color: black;
 }
