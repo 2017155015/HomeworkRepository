@@ -30,7 +30,7 @@ nav a {
 }
 
 @keyframes headsliding {
-  0% {margin-left: 67%;}
+  0% {margin-left: 60%;}
   100% {margin-left: 0%;}
 }
 
