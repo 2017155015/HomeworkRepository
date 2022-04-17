@@ -110,6 +110,10 @@ body {
   justify-content: center;
 }
 
+.column {
+  flex: 40%;
+  flex-direction: 
+}
 /* Footer */
 .footer {
     padding: 20px;
@@ -119,6 +123,8 @@ body {
 
 @media screen and (max-width: 480px) {
     .navbar {   
+      flex-basis: 100%;
+      max-width: 100%;
       flex-direction: column;
     }
     .item {
@@ -126,15 +132,26 @@ body {
       max-width: 100%;
       flex-direction: column;
     }
-
+    .column {
+      flex-basis : 100%;
+      max-width: 100%;
+      flex-direction: column;
+    }
 }
 @media screen and (min-width:481px) and (max-width: 800px) {
-    .navbar {   
+    .navbar {
+      flex-basis: 100%;
+      max-width: 100%;
       flex-direction: column;
     }
     .item {
       flex-basis : 50%;
       max-width: 50%;
+    }
+    .column {
+      flex-basis : 100%;
+      max-width: 100%;
+      flex-direction: column; 
     }
 }
 
