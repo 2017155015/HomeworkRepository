@@ -34,6 +34,9 @@ body {
 /* Style the top navigation bar */
 .navbar {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
     background-color: #333847;
 }
   
@@ -74,43 +77,37 @@ body {
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-    flex: 30%;
+    flex: 100%;
     background-color: #E9EBEE;
     padding: 20px;
+    justify-content: center;
+    text-align: center;
 }
   
 /* Main column */
 .container {
-    flex: 70%;
+    display : flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
     background-color: white;
-    padding: 20px;
-}
-  
-/* Fake image, just for this example */
-.fakeimg {
-    background-color: #aaa;
-    width: 100%;
+    flex-shrink: 1;
+    flex-grow: 1;
 }
 
-.image-border {
-    display: inline-block;
-    border: 3px solid gray; /*border*/
-    background: #871D60;
-    text-align: justify;
-    border-radius: 15px;
-    width: 240px; /*width*/
-    height: 240px; /*height*/
+.comment {
+    flex : 100%;
+    text-align : center;
 }
-  
-.scaleup-image {
-    display : block;
-    margin : 20px auto;
-    border-radius : 10px;
-    transition : transform 2s;
-}
-  
-.scaleup-image:hover {
-    transform: scale(1.2,1.2);
+
+.item {
+  flex: 25%;
+  max-width: 25%;
+  height: 500px;
+  flex-wrap : wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Footer */
@@ -120,14 +117,24 @@ body {
     background: #ddd;
 }
 
-@media (max-width: 480px) {
-    .row, .navbar {   
-    flex-direction: column;
+@media screen and (max-width: 480px) {
+    .navbar {   
+      flex-direction: column;
     }
+    .item {
+      flex-basis : 100%;
+      max-width: 100%;
+      flex-direction: column;
+    }
+
 }
-@media (min-width:481px) and (max-width: 800px) {
-    .row, .navbar {   
-    flex-direction: column;
+@media screen and (min-width:481px) and (max-width: 800px) {
+    .navbar {   
+      flex-direction: column;
+    }
+    .item {
+      flex-basis : 50%;
+      max-width: 50%;
     }
 }
 
