@@ -1,0 +1,196 @@
+/* Style the body */
+html {
+    display: flex;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    width : 1020px;
+}
+  
+/* Header/logo Title */
+.header {
+    padding: 10px;
+    background: #56AD57;
+    color: white;
+}
+
+#headsliding {
+    animation-name: headsliding;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-direction: alternate;
+}
+
+@keyframes headsliding {
+    0% {margin-left: 60%;}
+    100% {margin-left: 0%;}
+  }
+  
+/* Style the top navigation bar */
+.navbar {
+    display: flex;
+    background-color: #333847;
+}
+  
+/* Style the navigation bar links */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+  
+  /* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: #333847;
+}
+  
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#rotating-image {
+    border : 1px solid #333847;
+    background : #E9EBEE;
+    margin : 30px;
+    padding : 5px;
+    border-radius : 50px;
+    transition : transform 2s;
+}
+  
+#rotating-image:hover {
+    transform : rotate(360deg);
+}
+  
+  
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 30%;
+    background-color: #E9EBEE;
+    padding: 20px;
+}
+  
+/* Main column */
+.container {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+  
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+}
+
+.image-border {
+    display: inline-block;
+    border: 3px solid gray; /*border*/
+    background: #871D60;
+    text-align: justify;
+    border-radius: 15px;
+    width: 240px; /*width*/
+    height: 240px; /*height*/
+}
+  
+.scaleup-image {
+    display : block;
+    margin : 20px auto;
+    border-radius : 10px;
+    transition : transform 2s;
+}
+  
+.scaleup-image:hover {
+    transform: scale(1.2,1.2);
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+
+@media (max-width: 480px) {
+    .row, .navbar {   
+    flex-direction: column;
+    }
+}
+@media (min-width:481px) and (max-width: 800px) {
+    .row, .navbar {   
+    flex-direction: column;
+    }
+}
+
+
+/* signup, login page */
+
+.signup-page,
+.login-page {
+  text-align: center;
+}
+
+.signup-page h1 {
+  color: #aaa;
+}
+
+.required {
+  display: inline-block;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  background: #E9EBEE;
+  text-align: justify;
+  border-radius: 15px;
+  width: 400px; /*width*/
+  height: 300px; /*height*/
+}
+
+.option {
+  display: inline-block;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  background: #E9EBEE;
+  text-align: justify;
+  border-radius: 15px;
+  width: 400px; /*width*/
+  height: 100px; /*height*/
+}
+
+.login {
+  display: inline-block;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  background: #E9EBEE;
+  text-align: justify;
+  border-radius: 15px;
+  width: 400px; /*width*/
+  height: 180px; /*height*/
+}
+
+.gray-button {
+  display: flexbox;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  text-align: justify;
+  border-radius: 6px;
+  background-color: lightgray;
+}
+
+.gray-button:hover {
+  display: flexbox;
+  border: 3px solid gray; /*border*/
+  padding: 5px 20px; /*padding*/
+  background: white;
+  text-align: justify;
+  border-radius: 6px;
+  background-color: white;
+}
