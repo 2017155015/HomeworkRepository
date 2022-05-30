@@ -3,10 +3,71 @@
     <head>
         <title>Printing Multiple Lines in a Dialog Box</title>
         <script>
-            window.alert( "Welcome to\nJavaScript\nProgrammings!" );
-        </script>    
+            let name;
+            let now = new Date();
+            let hour = now.getHours();
+
+            name = windwow.prompt("Please enter your name");
+            
+            if ( hour < 12 )
+                document.write( "<h1>Good Morning, ");
+            
+            document.writeln("<h2>Hello"+ name +", welcome to JavaScript programming!</h2>");
+        </script>
+        <style type="text/css">
+            body {
+                text-align: center;
+                align-items: cneter;
+            }
+        </style>
     </head>
     <body>
-        <h2>Reload the page to run this script again.</h2>
+        <p><strong>안녕&amp;안녕</strong></p>
+        <p> &#38; &#x26;</p>
     </body>
+    <table border="2">
+        <caption>안녕</caption>
+        <thead>
+            <tr>
+                <th>안녕</th>
+                <th>안녕</th>
+                <th>안녕</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>하세요</th>
+                <th>하세요</th>
+                <th>하세요</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td rowspan="2">하세요</td>
+                <td>하세요</td>
+                <td>하세요</td>
+            </tr>
+            <tr>
+                <td>하세요</td>
+                <td>하세요</td>
+            </tr>
+            <tr>
+                <td colspan="3">안녕하세요</td>
+            </tr>
+        </tbody>
+    </table>
+        <form>
+            <p>
+                <label>검색 : </label>
+                <input type = "search" name = "search">
+            </p>
+            <p>
+                <label>전화번호 : </label>
+                <input type = "tel" name = "tel" pattern = "\d{3}-\d{4}-\{4}" placeholder = "010-xxxx-xxxx">
+            </p>
+        </form>
+    <aside>asdfasdfasdfasdfasdfadf</aside>
+    <mark>asdfasdfasdfasdfasdfasfa</mark>
+    <wbr>
+    <p style="color:blue; font-size:30pt;">asdfasdfasdfasfdads</p>
 </html>
