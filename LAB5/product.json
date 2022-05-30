@@ -1,0 +1,98 @@
+[
+    {
+        "name": "수퍼 수프림",
+        "img": "pizzahut1.png",
+        "price": "29,900",
+        "type": "pizzahut"
+    },
+    {
+        "name": "갈릭버터 쉬림프",
+        "img": "pizzahut2.png",
+        "price": "29,900",
+        "type": "pizzahut"
+    },
+    {
+        "name": "케이준 더블 쉬림프 포켓",
+        "img": "pizzahut3.png",
+        "price": "28,900",
+        "type": "pizzahut"
+    },
+    {
+        "name": "립스테이크 바이트",
+        "img": "pizzahut4.png",
+        "price": "28,900",
+        "type": "pizzahut"
+    },
+    {
+        "name": "마스터 트리플 코스",
+        "img": "dominos1.jpeg",
+        "price": "28,000",
+        "type": "dominos"
+    },
+    {
+        "name": "치즈 퐁듀 파이어 미트",
+        "img": "dominos2.jpeg",
+        "price": "29,000",
+        "type": "dominos"
+    },
+    {
+        "name": "블랙앵거스 스테이크",
+        "img": "dominos3.jpeg",
+        "price": "29,000",
+        "type": "dominos"
+    },
+    {
+        "name": "블랙타이거 쉬림프",
+        "img": "dominos4.jpeg",
+        "price": "29,500",
+        "type": "dominos"
+    },
+    {
+        "name": "수퍼 파파스",
+        "img": "papajohns1.png",
+        "price": "28,500",
+        "type": "papajohns"
+    },
+    {
+        "name": "존스 페이버릿",
+        "img": "papajohns2.png",
+        "price": "29,500",
+        "type": "papajohns"
+    },
+    {
+        "name": "스파이시 치킨랜치",
+        "img": "papajohns3.png",
+        "price": "29,500",
+        "type": "papajohns"
+    },
+    {
+        "name": "풀드포크 바베큐",
+        "img": "papajohns4.png",
+        "price": "28,500",
+        "type": "papajohns"
+    },
+    {
+        "name": "짱구의 해산물 피자",
+        "img": "mrpizza1.jpeg",
+        "price": "27,900",
+        "type": "Mr.Pizza"
+    },
+    {
+        "name": "킹 브레드 쉬림프 골드",
+        "img": "mrpizza2.jpeg",
+        "price": "31,500",
+        "type": "Mr.Pizza"
+    },
+    {
+        "name": "햄벅한 새우",
+        "img": "mrpizza3.jpeg",
+        "price": "29,900",
+        "type": "Mr.Pizza"
+    },
+    {
+        "name": "미스터 트리오",
+        "img": "mrpizza4.jpeg",
+        "price": "29,900",
+        "type": "Mr.Pizza"
+    }
+]
