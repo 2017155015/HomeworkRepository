@@ -117,3 +117,37 @@ aside, main {
   border-radius: 6px;
   background-color: white;
 }
+
+@media screen and (max-width: 480px) {
+    .navbar {   
+      flex-basis: 100%;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    .item {
+      flex-basis : 100%;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    .column {
+      flex-basis : 100%;
+      max-width: 100%;
+      flex-direction: column;
+    }
+}
+@media screen and (min-width:481px) and (max-width: 800px) {
+    .navbar {
+      flex-basis: 100%;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    .item {
+      flex-basis : 50%;
+      max-width: 50%;
+    }
+    .column {
+      flex-basis : 100%;
+      max-width: 100%;
+      flex-direction: column; 
+    }
+}
