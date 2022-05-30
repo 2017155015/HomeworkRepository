@@ -29,7 +29,7 @@ body {
 @keyframes headsliding {
     0% {margin-left: 60%;}
     100% {margin-left: 0%;}
-  }
+}
   
 /* Style the top navigation bar */
 .navbar {
