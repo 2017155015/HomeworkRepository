@@ -28,6 +28,12 @@ main {
   flex: 7;
 }
 
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
 /* Header/logo Title */
 .header {
   padding: 10px;
