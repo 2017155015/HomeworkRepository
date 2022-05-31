@@ -9,8 +9,8 @@ fetch(myRequest).then(response => response.json()).then(function(json) {
 
 function initialize(products) {
     const category = document.getElementById('category')
-    const searchTerm = document.getElementById('search');
-    const searchBtn = document.getElementById('searchButton');
+    const searchTerm = document.getElementById('searchTerm');
+    const searchBtn = document.getElementById('searchBtn');
     const main = document.querySelector('main');
 
     let lastCategory = category.value;
