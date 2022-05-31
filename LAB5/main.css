@@ -11,7 +11,23 @@ body {
   margin: 0;
   width : 1020px;
 }
-  
+
+.sidebar, main {
+  padding: 20px;
+}
+
+.pizzaproducts {
+  display: flex;
+}
+
+.sidebar {
+  flex: 3;
+}
+
+main {
+  flex: 7;
+}
+
 /* Header/logo Title */
 .header {
   padding: 10px;
@@ -65,7 +81,7 @@ aside div {
   margin-bottom: 20px;
 }
 
-label, select, input {
+.blockcontent {
   display: block;
 }
 
@@ -73,14 +89,18 @@ label {
   margin-bottom: 5px;
 }
 
-select, input, button {
+select, input {
+  width: 100%;
+}
+
+#searchBtn {
   width: 100%;
 }
 
 input {
-  background: #cca647;
+  background: white;
   box-shadow: inset 1px 1px 1px white;
-  color: #f0e3a3;
+  color: black;
   border: none;
   padding: 5px;
   width: 201.5px;
@@ -101,7 +121,7 @@ input {
   text-align: justify;
   border-radius: 15px;
   width: 400px; /*width*/
-  height: 300px; /*height*/
+  height: 320px; /*height*/
 }
 
 .login {
@@ -112,7 +132,7 @@ input {
   text-align: justify;
   border-radius: 15px;
   width: 400px; /*width*/
-  height: 180px; /*height*/
+  height: 220px; /*height*/
 }
 
 .button {
