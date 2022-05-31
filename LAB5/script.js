@@ -97,7 +97,6 @@ function initialize(products) {
         const section = document.createElement('section');
         const img = document.createElement('img');
         const container = document.createElement('div');
-        const prompt = document.createElement('p');
         const info = document.createElement('p');
         const price = document.createElement('p');
 
