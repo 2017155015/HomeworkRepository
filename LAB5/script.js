@@ -117,8 +117,6 @@ function initialize(products) {
             }
         }
 
-        prompt.textContent = "Click to see more";
-
         info.textContent = product.name;
         price.textContent = product.price + '₩';
             
