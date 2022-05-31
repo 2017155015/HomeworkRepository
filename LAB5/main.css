@@ -1,9 +1,9 @@
 html {
-    background: #f0e3a3;
-    display: flex;
-    align-self: center;
-    align-content: center;
-    justify-content: center;
+  background: #f0e3a3;
+  display: flex;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
 }
 
 body {
@@ -56,7 +56,10 @@ body {
 }
 
 aside, main {
-    padding:20px;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;  
+  padding:20px;
 }
 
 /* signup, login page */
@@ -70,29 +73,18 @@ aside, main {
   display: inline-block;
   border: 3px solid gray; /*border*/
   padding: 5px 20px; /*padding*/
-  background: #E9EBEE;
+  background: #cca647;
   text-align: justify;
   border-radius: 15px;
   width: 400px; /*width*/
   height: 300px; /*height*/
 }
 
-.option {
-  display: inline-block;
-  border: 3px solid gray; /*border*/
-  padding: 5px 20px; /*padding*/
-  background: #E9EBEE;
-  text-align: justify;
-  border-radius: 15px;
-  width: 400px; /*width*/
-  height: 100px; /*height*/
-}
-
 .login {
   display: inline-block;
   border: 3px solid gray; /*border*/
   padding: 5px 20px; /*padding*/
-  background: #E9EBEE;
+  background: #cca647;
   text-align: justify;
   border-radius: 15px;
   width: 400px; /*width*/
