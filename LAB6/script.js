@@ -46,7 +46,7 @@ function initialize(products) {
             } else {
                 const lowerCaseType = category.value.toLowerCase();
                 categoryGroup = products.filter( product => product.type === lowerCaseType );
-            selectProducts();
+                selectProducts();
             }
         }
     }
@@ -72,7 +72,7 @@ function initialize(products) {
             main.appendChild(para);
         } else {
             for (const product of finalGroup) {
-            fetchBlob(product);
+                fetchBlob(product);
             }
         }
     }
@@ -91,24 +91,36 @@ function initialize(products) {
     }
 
     function showProduct(blob, product) {
-        const objectURL = URL.createObjectURL(blob);
         const section = document.createElement('section');
-        const heading = document.createElement('h2');
-        const para = document.createElement('p');
-        const image = document.createElement('img');
+        const img = document.createElement('img');
+        const container = document.createElement('div');
+        const info = document.createElement('p');
+        const price = document.createElement('p');
 
-        section.setAttribute('class', product.type);
+        container.setAttribute('class', 'clickable');
+        container.id = i;
+        container.style.opacity = "0";
+        container.onclick = function(){
+            var x = document.getElementById(this.id);
+            if(x.style.opacity === "0"){
+                x.style.opacity = "1";
+            } else if(x.style.opacity === "1"){
+                x.style.opacity = "0";
+            } else {
+                x.style.opacity = "0";
+            }
+        }
 
-        heading.textContent = product.name.replace(product.name.charAt(0), product.name.charAt(0).toUpperCase());
-
-        para.textContent = `$${product.price.toFixed(2)}`;
+        info.textContent = product.name;
+        price.textContent = product.price + '₩';
 
         image.src = objectURL;
         image.alt = product.name;
 
         main.appendChild(section);
-        section.appendChild(heading);
-        section.appendChild(para);
-        section.appendChild(image);
+        section.appendChild(container);
+        container.appendChild(info);
+        container.appendChild(price)
+        section.appendChild(img);
     }
 }
