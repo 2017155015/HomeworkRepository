@@ -179,7 +179,7 @@ function load() {
             prompt.textContent = "Click to see more";
 
             info.textContent = products[start].name;
-            price.textContent = '$' + products[start].price;
+            price.textContent = products[start].price + '₩';
             
             img.src = url;
             img.alt = products[start].name;
