@@ -1,16 +1,17 @@
-const myRequest = new Request('product.json')
-let counter = 4;
-
-fetch(myRequest).then(response => response.json()).then(function(json) {
-    let products = json;
-    initialize(products);
-})
-    .catch(console.error);
+fetch('product.json')
+    .then( response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then( json => initialize(json) )
+    .catch( err => console.error(`Fetch problem: ${err.message}`) );
 
 function initialize(products) {
-    const category = document.getElementById('category')
-    const searchTerm = document.getElementById('searchTerm');
-    const searchBtn = document.getElementById('searchBtn');
+    const category = document.querySelector('#category');
+    const searchTerm = document.querySelector('#searchTerm');
+    const searchBtn = document.querySelector('#searchBtn');
     const main = document.querySelector('main');
 
     let lastCategory = category.value;
@@ -25,7 +26,7 @@ function initialize(products) {
     categoryGroup = [];
     finalGroup = [];
 
-    searchBtn.onclick = selectCategory;
+    searchBtn.addEventListener('click', selectCategory);
 
     function selectCategory(e) {
         e.preventDefault();
@@ -33,164 +34,81 @@ function initialize(products) {
         categoryGroup = [];
         finalGroup = [];
 
-        if(category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+        if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
             return;
         } else {
             lastCategory = category.value;
             lastSearch = searchTerm.value.trim();
-
-            if(category.value === 'All') {
+        
+            if (category.value === 'All') {
                 categoryGroup = products;
                 selectProducts();
             } else {
-                let lowerCaseType = category.value.toLowerCase();
-                for(let i = 0; i < products.length; i++){
-                    if(products[i].type === lowerCaseType) {
-                        categoryGroup.push(products[i]);
-                    }
-                }
-
-                selectProducts();
+                const lowerCaseType = category.value.toLowerCase();
+                categoryGroup = products.filter( product => product.type === lowerCaseType );
+            selectProducts();
             }
         }
     }
 
     function selectProducts() {
-        if(searchTerm.value.trim() === '') {
+        if (searchTerm.value.trim() === '') {
             finalGroup = categoryGroup;
-            updateDisplay();
         } else {
-            let lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
-    
-            for(let i = 0; i < categoryGroup.length; i++) {
-                if(categoryGroup[i].name.toLowerCase().includes(lowerCaseSearchTerm)) {
-                    finalGroup.push(categoryGroup[i]);
-                }
-            }
-    
-            updateDisplay();
+            const lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
+            finalGroup = categoryGroup.filter( product => product.name.includes(lowerCaseSearchTerm));
         }
+        
+        updateDisplay();
     }
-    
+
     function updateDisplay() {
         while (main.firstChild) {
             main.removeChild(main.firstChild);
         }
-    
-        if(finalGroup.length === 0) {
+        if (finalGroup.length === 0) {
             const para = document.createElement('p');
             para.textContent = 'No results to display!';
             main.appendChild(para);
         } else {
-            for(let i = 0; i < 4; i++) {
-                fetchImg(finalGroup[i], i);
+            for (const product of finalGroup) {
+            fetchBlob(product);
             }
         }
     }
-    
-    function fetchImg(product, i) {
-        let url = './images/' + product.img;
-        showProduct(url, product, i);
+
+    function fetchBlob(product) {
+        const url = `images/${product.image}`;
+        fetch(url)
+        .then( response => {
+            if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+            }
+            return response.blob();
+        })
+        .then( blob => showProduct(blob, product) )
+        .catch( err => console.error(`Fetch problem: ${err.message}`) );
     }
-    
-    function showProduct(objURL, product, i) {
+
+    function showProduct(blob, product) {
+        const objectURL = URL.createObjectURL(blob);
         const section = document.createElement('section');
-        const img = document.createElement('img');
-        const container = document.createElement('div');
-        const prompt = document.createElement('p');
-        const info = document.createElement('p');
-        const price = document.createElement('p');
+        const heading = document.createElement('h2');
+        const para = document.createElement('p');
+        const image = document.createElement('img');
 
-        section.setAttribute('class', 'onClickTextOverImage');
+        section.setAttribute('class', product.type);
 
-        container.setAttribute('class', 'clickable');
-        container.id = i;
-        container.style.opacity = "0";
-        container.onclick = function(){
-            var x = document.getElementById(this.id);
-            if(x.style.opacity === "0"){
-                x.style.opacity = "1";
-            } else if(x.style.opacity === "1"){
-                x.style.opacity = "0";
-            } else {
-                x.style.opacity = "0";
-            }
-        }
+        heading.textContent = product.name.replace(product.name.charAt(0), product.name.charAt(0).toUpperCase());
 
-        prompt.textContent = "Click to see more";
+        para.textContent = `$${product.price.toFixed(2)}`;
 
-        info.textContent = product.name;
-        price.textContent = product.price + '₩';
-            
-        img.src = objURL;
-        img.alt = product.name;
+        image.src = objectURL;
+        image.alt = product.name;
 
         main.appendChild(section);
-        section.appendChild(container);
-        container.appendChild(info);
-        container.appendChild(price)
-        section.appendChild(img);
-        section.appendChild(prompt);
+        section.appendChild(heading);
+        section.appendChild(para);
+        section.appendChild(image);
     }
 }
-
-window.addEventListener('scroll', () => {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if(clientHeight + scrollTop >= scrollHeight - 3) {
-        load();
-    }
-});
-
-function load() {
-    const main = document.querySelector('main');
-
-    var start = counter;
-    var end = start + 4;
-    counter = end;
-
-    fetch(myRequest).then(response => response.json()).then(function(json) {
-        let products = json;
-        for(start; start < end; start++) {
-            const section = document.createElement('section');
-            const img = document.createElement('img');
-            const container = document.createElement('div');
-            const prompt = document.createElement('p');
-            const info = document.createElement('p');
-            const price = document.createElement('p');
-
-            let url = './images/' + products[start].img;
-    
-            section.setAttribute('class', 'onClickTextOverImage');
-
-            container.setAttribute('class', 'clickable');
-            container.id = start;
-            container.style.opacity = "0";
-            container.onclick = function(){
-                var x = document.getElementById(this.id);
-                if(x.style.opacity === "0"){
-                    x.style.opacity = "1";
-                } else if(x.style.opacity === "1"){
-                    x.style.opacity = "0";
-                } else {
-                    x.style.opacity = "0";
-                }
-            }
-
-            prompt.textContent = "Click to see more";
-
-            info.textContent = products[start].name;
-            price.textContent = products[start].price + '₩';
-            
-            img.src = url;
-            img.alt = products[start].name;
-    
-            main.appendChild(section);
-            section.appendChild(container);
-            container.appendChild(info);
-            container.appendChild(price);
-            section.appendChild(img);
-            section.appendChild(prompt);
-        }
-    })
-        .catch(console.error);
-};
