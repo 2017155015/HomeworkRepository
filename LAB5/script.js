@@ -127,7 +127,6 @@ function initialize(products) {
         container.appendChild(info);
         container.appendChild(price)
         section.appendChild(img);
-        section.appendChild(prompt);
     }
 }
 
@@ -151,7 +150,6 @@ function load() {
             const section = document.createElement('section');
             const img = document.createElement('img');
             const container = document.createElement('div');
-            const prompt = document.createElement('p');
             const info = document.createElement('p');
             const price = document.createElement('p');
 
@@ -173,8 +171,6 @@ function load() {
                 }
             }
 
-            prompt.textContent = "Click to see more";
-
             info.textContent = products[start].name;
             price.textContent = products[start].price + '₩';
             
@@ -185,8 +181,7 @@ function load() {
             section.appendChild(container);
             container.appendChild(info);
             container.appendChild(price);
-            section.appendChild(img);
-            section.appendChild(prompt);
+            section.appendChild(img);=
         }
     })
         .catch(console.error);
