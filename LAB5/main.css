@@ -50,8 +50,9 @@ section img {
   height: 300px;
   position: absolute;
   text-align: center;
+  align-items: center;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   color: aliceblue;
   font-size: x-large;
 }
