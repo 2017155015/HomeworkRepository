@@ -75,24 +75,24 @@
         "name": "짱구의 해산물 피자",
         "img": "mrpizza1.jpeg",
         "price": "27,900",
-        "type": "Mr.Pizza"
+        "type": "mr.pizza"
     },
     {
         "name": "킹 브레드 쉬림프 골드",
         "img": "mrpizza2.jpeg",
         "price": "31,500",
-        "type": "Mr.Pizza"
+        "type": "mr.pizza"
     },
     {
         "name": "햄벅한 새우",
         "img": "mrpizza3.jpeg",
         "price": "29,900",
-        "type": "Mr.Pizza"
+        "type": "mr.pizza"
     },
     {
         "name": "미스터 트리오",
         "img": "mrpizza4.jpeg",
         "price": "29,900",
-        "type": "Mr.Pizza"
+        "type": "mr.pizza"
     }
 ]
