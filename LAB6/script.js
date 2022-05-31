@@ -1,12 +1,11 @@
-fetch('product.json')
-    .then( response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then( json => initialize(json) )
-    .catch( err => console.error(`Fetch problem: ${err.message}`) );
+const myRequest = new Request('product.json')
+let counter = 4;
+
+fetch(myRequest).then(response => response.json()).then(function(json) {
+    let products = json;
+    initialize(products);
+})
+    .catch(console.error);
 
 function initialize(products) {
     const category = document.querySelector('#category');
@@ -131,8 +130,6 @@ window.addEventListener('scroll', () => {
         load();
     }
 });
-
-let counter = 4;
 
 function load() {
     const main = document.querySelector('main');
