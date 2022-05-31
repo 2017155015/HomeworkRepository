@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- form.html -->
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>회원가입하기</title>
+        <link rel = "stylesheet" type = "text/css" href = "main.css">
+    </head>
+    <body>
+        <form class = "signup-page">
+            <h1>회원가입하기</h1>
+            <button onclick="window.location.href='./index.html';" class="button">Back to Main Page</button>
+            <h3>계정이 이미 있는 경우</h3>
+            <button onclick="window.location.href='./login.html';" class="button">Login</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <div class = "required">
+                <h4>필수 입력 사항</h4>
+                <p>
+                    <label>이름 : 
+                        <input type = "text" name = "name" placeholder = "이름" size = "25" maxlength = "30" autofocus required /><!--using autofocus attribute-->
+                    </label>
+                </p>
+                <p>
+                    <label>생년월일 : 
+                        <input type = "date" name = "date" required /><!--using required attribute-->
+                    </label>
+                </p>
+                <p>
+                    <label>전화번호 : 
+                        <input type = "tel" name = "tel" placeholder = "###-####-####" pattern = "\d{3}-\d{4}-\d{4}" required /><!--using pattern attribute-->
+                    </label>
+                </p>
+                <p>
+                    <label>아이디 : 
+                        <input type = "email" name = "id" size = "25" placeholder = "name@domain.com" required /><!--using placeholder attribute-->
+                    </label>
+                </p>
+                <p>
+                    <label>비밀번호 : 
+                        <input type = "password" name = "password" size = "25" placeholder = "비밀번호" required />
+                    </label>
+                </p>
+                <p>
+                    <label>비밀번호 재입력 : 
+                        <input type = "password" name = "re-inputPassword" size = "25" placeholder = "비밀번호 재입력" required />
+                    </label>
+                </p>    
+            </div>
+            <br>
+            <br>
+            <p>
+                <input type = "submit" class = "button" value = "제출" />
+                <input type = "reset" class = "button" value = "취소" />
+            </p>
+        </form>
+    </body>
+</html>
