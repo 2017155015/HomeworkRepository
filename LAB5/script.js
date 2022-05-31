@@ -120,7 +120,7 @@ function initialize(products) {
         prompt.textContent = "Click to see more";
 
         info.textContent = product.name;
-        price.textContent = '$' + product.price;
+        price.textContent = product.price + '₩';
             
         img.src = objURL;
         img.alt = product.name;
