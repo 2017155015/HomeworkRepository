@@ -145,7 +145,7 @@ function load() {
     const main = document.querySelector('main');
 
     var start = counter;
-    var end = start + 3;
+    var end = start + 4;
     counter = end;
 
     fetch(myRequest).then(response => response.json()).then(function(json) {
