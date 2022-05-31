@@ -1,7 +1,7 @@
-const Request = new Request('product.json')
+const myRequest = new Request('product.json')
 let counter = 4;
 
-fetch(Request).then(response => response.json()).then(function(json) {
+fetch(myRequest).then(response => response.json()).then(function(json) {
     let products = json;
     initialize(products);
 })
@@ -144,7 +144,7 @@ function load() {
     var end = start + 4;
     counter = end;
 
-    fetch(Request).then(response => response.json()).then(function(json) {
+    fetch(myRequest).then(response => response.json()).then(function(json) {
         let products = json;
         for(start; start < end; start++) {
             const section = document.createElement('section');
