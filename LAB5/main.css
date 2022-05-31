@@ -34,6 +34,28 @@ main {
   justify-content: space-around;
 }
 
+section {
+  width: 45%;
+  margin: 5px;
+  position: relative;
+}
+
+section img {
+  height: 300px;
+  width: 300px;
+}
+
+.clickable {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: aliceblue;
+  font-size: x-large;
+}
+
 /* Header/logo Title */
 .header {
   padding: 10px;
