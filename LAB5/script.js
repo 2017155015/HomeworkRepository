@@ -181,7 +181,7 @@ function load() {
             section.appendChild(container);
             container.appendChild(info);
             container.appendChild(price);
-            section.appendChild(img);=
+            section.appendChild(img);
         }
     })
         .catch(console.error);
