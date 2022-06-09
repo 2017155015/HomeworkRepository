@@ -1,8 +1,25 @@
+const sqlite3 = require("sqlite3");
+const sqlite = require("sqlite");
+
 const express = require("express");
 
 const fs = require("fs");
 
 const app = express();
+
+const PORT = process.env.PORT||8000;
+
+app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+async function getDBConnection() {
+    const db = await sqlite.open({
+        filename: 'test.db',
+        driver: sqlite3.Database
+    });
+    return db;
+}
 
 app.post("/write-file", function (req, res) {
     console.log(req.body);
@@ -42,9 +59,30 @@ app.get("/read-file", function (req, res) {
     });
 });
 
-app.get("/", (req, res) => {
-    res.send("Hello World~!");
-})
+app.get("/", async function(req, res) {
+    let db = await getDBConnection()
+    let rows = await db.all('select * from images');
+    await db.close();
+    myimage_info = '';
+    
+    for (var i = 0; i < rows.length; i++) {
+        myimage_info += 'image_id: ' + rows[i]['image_id'] + ', image_name: ' + rows[i]['image_name'] + ', image_path: ' + rows[i]['image_path'] + '<br>';
+    }
+
+    console.log(myimage_info)
+    var output = 
+    `<!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+            </head>
+            <body>
+                ${myimage_info}
+            </body>
+        </html>`;
+    
+    res.send(output);
+});
 
 app.get("/posts", function (req, res) {
     res.json([
@@ -53,13 +91,7 @@ app.get("/posts", function (req, res) {
     ]);
 })
 
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-const PORT = process.env.PORT || 8000;
-
 app.listen(PORT, () => {
     console.log("서버가 실행됐습니다.");
-    console.log('서버주소: http://localhost:${PORT}');
-})
+    console.log(`서버주소: http://localhost:${PORT}`);
+});
