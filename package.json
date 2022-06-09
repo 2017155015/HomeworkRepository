@@ -1,7 +1,6 @@
 {
   "name": "mynodejs",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +16,9 @@
   },
   "homepage": "https://github.com/2017155015/HomeworkRepository#readme",
   "dependencies": {
-    "express": "^4.18.1"
-  }
+    "express": "^4.18.1",
+    "sqlite": "^4.1.1",
+    "sqlite3": "^5.0.8"
+  },
+  "description": ""
 }
